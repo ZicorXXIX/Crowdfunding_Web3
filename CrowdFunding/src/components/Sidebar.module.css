@@ -1,16 +1,28 @@
 .mainDiv{
     display: flex;
     width: 76px;
-    flex: column;
     background-color: #1c1c24;
     border-radius: 20px;
     height: 93vh;
-
+    position: sticky; 
+    top: 1.25rem; 
+    flex-direction: column; 
+    /* justify-content: space-between;  */
+    align-items: center;
+    
+    /* padding-top: 50px; */
 }
 
 .icon{
+    width: 50%; 
+    height: 50%;  
+}
+.iconDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 29px 0;  
     width: 48px;
     height: 48px;
     border-radius: 10px;
-    
 }
