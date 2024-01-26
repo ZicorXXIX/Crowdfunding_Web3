@@ -1,0 +1,16 @@
+.mainDiv{
+    display: flex;
+    width: 76px;
+    flex: column;
+    background-color: #1c1c24;
+    border-radius: 20px;
+    height: 93vh;
+
+}
+
+.icon{
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    
+}
