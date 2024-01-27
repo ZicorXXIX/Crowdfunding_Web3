@@ -38,6 +38,10 @@ const CampaignSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    target: {
+      type: Number,
+      required: true,
+    },
   },
   {
     timestamps: true,
@@ -63,6 +67,48 @@ app.get("/", async (req, res) => {
   const data = await Campaign.find({});
   res.status(200).json(data);
   console.log(data);
+});
+
+app.post("/createCampaign", async (req, res) => {
+  const campaign = new Campaign({
+    name: req.body.name,
+    campainTitle: req.body.title,
+    story: req.body.description,
+    endDate: req.body.deadline,
+    image: req.body.image,
+    target: req.body.target,
+  });
+
+  campaign
+    .save()
+    .then((result) => {
+      console.log(result);
+      res.status(200).json({ message: "Campaign created successfully" });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ message: "Error while creating campaign" });
+    });
+});
+
+app.get("/search/:query", async (req, res) => {
+  console.log(req.params.query);
+  let queryParam = req.params.query;
+  let regex = new RegExp(queryParam, "m");
+  // let queryObject = {
+  //  campaignTitle: { $regex: regex }
+  // };
+
+  Campaign.find({
+    campainTitle: { $regex: regex },
+  })
+    .then((result) => {
+      // console.log(result);
+      res.status(200).json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 app.listen(3000, () => {

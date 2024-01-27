@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { ethers } from 'ethers';
-
+import axios from 'axios';
 // import { useStateContext } from '../context';
 import { money } from '../assets';
 // import { CustomButton, FormField, Loader } from '../components';
@@ -12,7 +12,7 @@ import CustomButton from './CustomButton';
 
 
 const CreateCampaign = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
     // const { createCampaign } = useStateContext();
     const [form, setForm] = useState({
@@ -27,13 +27,20 @@ const CreateCampaign = () => {
     const handleFormFieldChange = (fieldName, e) => {
         e.preventDefault();
 
+        console.log(e.target.value);
         setForm({ ...form, [fieldName]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Button clicked');
+        // console.log('Button clicked');
         console.log(form);
+        const response = await axios.post("http://localhost:3000/createCampaign", form).then((res) => { console.log(res); return res }).catch((err) => { console.log(err); })
+        console.log(response);
+        if (response.status == 200) {
+            navigate('/');
+        }
+
 
         //   checkIfImage(form.image, async (exists) => {
         //     if(exists) {
@@ -131,12 +138,12 @@ const CreateCampaign = () => {
  styles="bg-[#1dc071]"
 /> */}
 
-                    <button type='submit' className='bg-[#999]' onClick={handleClick()} >
+                    <button type='submit' className='bg-[#999]'  >
                         Submit
                     </button>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     )
 }
 
