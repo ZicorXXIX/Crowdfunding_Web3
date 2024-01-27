@@ -1,12 +1,15 @@
 .wrapper{
     cursor: pointer; 
     background: #1c1c24;
-    width: 288px;    
+    width: 260px;    
     border-radius: 10px;
     color: white;
+    font-family: Arial,sans-serif;
+    font-size: small;
 }
 .description{
-    padding: 20px 10px;
+    padding: 0px 25px;
+    padding-bottom: 10px;
 }
 .img{
     object-fit: cover; 
@@ -20,13 +23,24 @@
     justify-content: space-between;
     gap: 2;
     text-align: left;
+    color: gray;
+
     
 }
+h4,h3{
+    margin: 0;   
+    margin-bottom: 0;
+}
 
+p{
+    color: rgb(100, 94, 94);
+    margin: 4px auto;
+}
 .profileImg{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
+    background-color: rgb(76, 72, 72);
 }
 
 .userId{
@@ -41,5 +55,8 @@
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    margin: 10px auto ;
+    color: grey;
+
 
 }

@@ -1,0 +1,29 @@
+import React from 'react'
+
+const CustomButton = ({ btnType, title,handleClick, styles }) => {
+  console.log(btnType);
+  return (
+    <button
+    
+      type={btnType}
+      className={`font-epilogue font-semibold text-[16px] leading-[26px] text-white min-h-[52px] px-4 rounded-[10px] ${styles}`}
+      onClick={handleClick}
+    >
+      {title}
+    </button>
+  )
+}
+
+export default CustomButton
+
+
+// function CustomButton({ btnType, title, styles }) {
+//   return (
+//       <button type={btnType} className={styles}>
+//           {title}
+//       </button>
+//   );
+// }
+
+// export default CustomButton
+// // 
