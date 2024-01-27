@@ -124,13 +124,13 @@ const CreateCampaign = () => {
                 />
 
                 <div className="flex justify-center items-center mt-[40px]">
-                    {/* <CustomButton 
-                btnType="submit"
-                title="Submit new campaign"
-                // onClick={handleClick}
-                handleClick={handleClick}
-                styles="bg-[#1dc071]"
-              /> */}
+                    <CustomButton
+                        btnType="submit"
+                        title="Submit new campaign"
+                        // onClick={handleClick}
+                        handleClick={handleClick}
+                        styles="bg-[#1dc071]"
+                    />
                     {/* <CustomButton 
  btnType="submit"
  title="Submit new campaign"
@@ -138,9 +138,9 @@ const CreateCampaign = () => {
  styles="bg-[#1dc071]"
 /> */}
 
-                    <button type='submit' className='bg-[#999]'  >
+                    {/* <button type='submit' className='bg-[#999]'  >
                         Submit
-                    </button>
+                    </button> */}
                 </div>
             </form >
         </div >
